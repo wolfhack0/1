@@ -160,3 +160,44 @@ a {
         opacity: 1;
     }
 }
+/* WOLF STORE STATUS BOX */
+
+.status-box {
+    position: absolute;
+    left: 7%;
+    top: 42%;
+    width: 38%;
+    min-height: 100px;
+    box-sizing: border-box;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 14px;
+
+    padding: 22px;
+    margin: 0;
+
+    background: rgba(10, 10, 10, 0.88);
+    border: 2px solid #d4af37;
+    border-radius: 14px;
+
+    color: #ffffff;
+    font-size: 30px;
+    font-weight: 900;
+    line-height: 1.5;
+    text-align: center;
+
+    box-shadow: 0 0 25px rgba(212, 175, 55, 0.2);
+    text-shadow: 0 2px 5px #000;
+}
+
+/* Mobile / smaller screens */
+@media (max-width: 700px) {
+    .status-box {
+        left: 5%;
+        width: 90%;
+        top: 40%;
+        font-size: 23px;
+    }
+}
