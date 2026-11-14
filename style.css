@@ -90,3 +90,73 @@ a {
     background-color: #c2c2c2;
     color: #303030;
 }
+/* WOLF STORE - STATUS ICONS */
+
+#msgs {
+    text-align: center;
+}
+
+#msgs::before {
+    content: "";
+    display: inline-block;
+    width: 27px;
+    height: 27px;
+    margin-inline-end: 12px;
+    vertical-align: middle;
+    border: 4px solid rgba(212, 175, 55, 0.2);
+    border-top-color: #d4af37;
+    border-radius: 50%;
+    animation: wolfSpin 0.8s linear infinite;
+}
+
+@keyframes wolfSpin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* SUCCESS */
+#msgs.status-success::before {
+    content: "✓";
+    width: auto;
+    height: auto;
+    border: none;
+    animation: wolfSuccess 0.4s ease-out;
+    color: #20d66b;
+    font-size: 38px;
+    font-weight: bold;
+}
+
+/* FAILED */
+#msgs.status-failed::before {
+    content: "✕";
+    width: auto;
+    height: auto;
+    border: none;
+    animation: wolfFail 0.4s ease-out;
+    color: #ff3333;
+    font-size: 38px;
+    font-weight: bold;
+}
+
+@keyframes wolfSuccess {
+    from {
+        transform: scale(0.3);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+@keyframes wolfFail {
+    from {
+        transform: scale(0.3);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
