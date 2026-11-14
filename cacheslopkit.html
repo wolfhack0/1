@@ -1,19 +1,77 @@
 <!DOCTYPE html>
-<html manifest="slopkit.manifest">
+<html lang="ar" dir="rtl" manifest="slopkit.manifest">
 <head>
-<title>WOLF STORE HACK</title>
-<link rel="stylesheet" href="../style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>WOLF STORE - تثبيت الكاش</title>
+<link rel="stylesheet" href="style.css">
+<style>
+.cache-wrap{min-height:100vh;display:grid;place-items:center;padding:20px}
+.cache-card{width:min(680px,100%);padding:32px 22px;text-align:center;background:#050709ed;border:1px solid #d4af5580;border-radius:16px}
+.cache-spin{width:48px;height:48px;margin:20px auto;border:4px solid #d4af5530;border-top-color:#f0d17a;border-radius:50%;animation:spin .8s linear infinite}
+#cacheMsg{font-size:23px;color:#f0d17a}
+#cacheDetail{color:#bdb39c;font-size:14px}
+#cacheBar{height:8px;background:#ffffff18;border-radius:9px;overflow:hidden;margin:20px 0}
+#cacheFill{height:100%;width:0;background:#d4af55;transition:width .2s}
+.done .cache-spin{display:none}
+.done #cacheMsg{color:#27d879}
+.fail #cacheMsg{color:#ff626a}
+.cache-actions{display:none;margin-top:20px}
+.done .cache-actions,.fail .cache-actions{display:block}
+.cache-actions a{display:inline-block;margin:6px;padding:11px 18px;border:1px solid #d4af55;border-radius:8px;color:#f0d17a;text-decoration:none}
+</style>
 </head>
 <body>
+<main class="cache-wrap"><section class="cache-card" id="cacheCard">
+<div class="eyebrow">WOLF STORE · OFFLINE CACHE</div>
+<div class="cache-spin" aria-hidden="true"></div>
+<h1 id="cacheMsg">جاري تحميل الكاش للأوفلاين...</h1>
+<p id="cacheDetail">اترك الصفحة مفتوحة حتى يكتمل التحميل. لا تغلق المتصفح.</p>
+<div id="cacheBar"><div id="cacheFill"></div></div>
+<div class="cache-actions">
+<a href="index.html">الانتقال إلى الصفحة الرئيسية</a>
+<a href="cacheslopkit.html">إعادة المحاولة</a>
+</div>
+</section></main>
 <script>
-history.replaceState(null,null,'index.html');var histlength=history.length;history.go(-histlength);
-function DLProgress(e){Percent=(Math.round(e.loaded / e.total * 100));window.msgs.innerHTML="Installing Offline Cache: " + Percent + "%";}
-function DisplayCacheProgress(){window.msgs.innerHTML="Cache Installed Successfully ✔";setTimeout(function(){window.msgs.innerHTML="Now Close And Re-Open Your Browser ...";},1500);}
-window.applicationCache.addEventListener("progress",DLProgress,false);
-window.applicationCache.oncached=function(e){DisplayCacheProgress();};
-window.applicationCache.onupdateready=function(e){DisplayCacheProgress();};
-window.applicationCache.onerror=function(e){window.msgs.innerHTML="Error Installing Cache! - Clear and Re-Open Your Browser ...";};
+(function(){
+ const card=document.getElementById('cacheCard');
+ const msg=document.getElementById('cacheMsg');
+ const detail=document.getElementById('cacheDetail');
+ const fill=document.getElementById('cacheFill');
+ const app=window.applicationCache;
+ function success(text){
+   card.classList.remove('fail');card.classList.add('done');
+   msg.textContent='تم تثبيت الكاش بنجاح ✓';
+   detail.textContent=text||'أغلق متصفح PS4 بالكامل ثم افتحه مرة أخرى، وبعدها افتح الموقع بدون إنترنت.';
+   fill.style.width='100%';
+ }
+ function failure(text){
+   card.classList.remove('done');card.classList.add('fail');
+   msg.textContent='فشل تحميل الكاش ✕';
+   detail.textContent=text||'تأكد من اتصال الإنترنت ومن رفع كل ملفات المستودع، ثم أعد المحاولة.';
+ }
+ if(!app){failure('هذا المتصفح لا يدعم AppCache أو أن الصفحة لا تُفتح من عنوان HTTPS.');return;}
+ app.addEventListener('checking',()=>{msg.textContent='جاري فحص ملفات الكاش...';});
+ app.addEventListener('downloading',()=>{msg.textContent='جاري تحميل ملفات الكاش للأوفلاين...';});
+ app.addEventListener('progress',e=>{
+   if(e.lengthComputable && e.total>0){
+     const pct=Math.round(e.loaded/e.total*100);
+     fill.style.width=pct+'%';
+     detail.textContent='تم تحميل '+pct+'%';
+   }else{
+     detail.textContent='جاري تنزيل ملفات الموقع...';
+   }
+ });
+ app.addEventListener('cached',()=>success());
+ app.addEventListener('noupdate',()=>success('الكاش مثبت بالفعل ومحدّث. يمكنك إغلاق المتصفح وفتحه مرة أخرى.'));
+ app.addEventListener('updateready',()=>{
+   try{app.swapCache();}catch(e){}
+   success('تم تحديث الكاش. أغلق المتصفح بالكامل ثم افتحه مرة أخرى.');
+ });
+ app.addEventListener('error',()=>failure('حدث خطأ أثناء تنزيل أحد الملفات. راجع أن أسماء الملفات والمسارات في GitHub مطابقة تماماً.'));
+ app.addEventListener('obsolete',()=>failure('ملف manifest غير متاح أو تم حذفه من المستودع.'));
+ if(app.status===1){success('الكاش مثبت بالفعل. أغلق المتصفح بالكامل ثم افتحه مرة أخرى.');}
+})();
 </script>
-<h1 id=msgs style="font-size: 30px;margin-top: 77px;margin-bottom: 455px;">Starting Cache Installation...</h1>
-</body>
-</html>
+</body></html>
