@@ -1,9 +1,11 @@
 CACHE MANIFEST
+# WOLF STORE offline cache v6 - success message update for PS4 firmware 13.04
 
 CACHE:
 index.html
 style.css
 img.jpg
+goldhen_2.4b18.13.bin
 goldhen_2.4b18.14.bin
 cacheslopkit.html
 games/index.html

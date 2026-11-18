@@ -144,7 +144,7 @@ if (!isPS4) {
      document.getElementById('statusHint').textContent='تعذر التشغيل. راجع رسالة الخطأ وحاول مرة أخرى.';
    } else if(/goldhen.*loaded|loaded successfully|success|نجح|تم التشغيل/.test(t)){
      el.classList.add('status-success');
-     document.getElementById('statusHint').textContent='تم تحميل GoldHEN بنجاح.';
+     document.getElementById('statusHint').textContent='تم التشغيل بنجاح.';
    } else {
      document.getElementById('statusHint').textContent='يرجى الانتظار حتى اكتمال عملية التشغيل.';
    }
