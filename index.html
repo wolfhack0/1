@@ -20,13 +20,13 @@
   <div class="hero-card">
     <div class="eyebrow">PLAYSTATION 4 · WOLF STORE</div>
     <h1>شكراً لاختيارك <span>WOLF STORE</span></h1>
-    <p class="subtitle">جاري تجهيز GoldHEN لتشغيل الألعاب</p>
+    <p class="subtitle">PLAYSTATION 4 · WOLF STORE</p>
     <section class="status-panel" aria-live="polite">
       <h2 id="msgs">انتظر للتشغيل...</h2>
       <p id="statusHint">يرجى الانتظار حتى اكتمال عملية التشغيل</p>
     </section>
     <div class="gold-rule"></div>
-    <p class="small-note">لا تغلق المتصفح أثناء التشغيل</p>
+    <p class="small-note">WOLF STORE</p>
   </div>
 </main>
 <footer class="footer"><span>WOLF STORE</span><span>الفيوم · مصر</span></footer>
@@ -38,7 +38,7 @@ var fwVersion = isPS4 ? match[1] : "Unknown";
 var fwNum = parseFloat(fwVersion);
 
 function onScriptError() {
-    msgs.innerHTML = "Content not Found! - Clear Browser Data and Re-Install Cache ...";
+    msgs.innerHTML = "فشل التشغيل";
 }
 
 if (!isPS4) {
@@ -135,18 +135,19 @@ if (!isPS4) {
 <script>
 (function(){
  const el=document.getElementById('msgs');
- if(!el)return;
+ const hint=document.getElementById('statusHint');
+ if(!el||!hint)return;
  function check(){
    const t=(el.textContent||'').toLowerCase();
    el.classList.remove('status-success','status-failed');
    if(/failed|error|فشل|خطأ|not found|unsupported firmware|no offsets/.test(t)){
      el.classList.add('status-failed');
-     document.getElementById('statusHint').textContent='تعذر التشغيل. راجع رسالة الخطأ وحاول مرة أخرى.';
+     hint.innerHTML='اضغط لإعادة المحاولة<br><button type="button" class="retry-button" onclick="window.location.reload()">إعادة المحاولة</button>';
    } else if(/goldhen.*loaded|loaded successfully|success|نجح|تم التشغيل/.test(t)){
      el.classList.add('status-success');
-     document.getElementById('statusHint').textContent='تم التشغيل بنجاح.';
+     hint.textContent='الآن أغلق المتصفح واستمتع بالألعاب';
    } else {
-     document.getElementById('statusHint').textContent='يرجى الانتظار حتى اكتمال عملية التشغيل.';
+     hint.textContent='يرجى الانتظار حتى اكتمال عملية التشغيل';
    }
  }
  check();
