@@ -527,6 +527,13 @@ PS4["13.50"] = {
   kpatch: "1350.bin",
 };
 
+// Firmware 13.51 reports the same supported 13.50 offset family.
+// Keep an explicit key because offsetsFor() normalizes the minor version as hex.
+PS4["13.51"] = Object.assign({}, PS4["13.50"], {
+  alias_of: "13.50",
+  fw_status: "13.51 compatibility alias to the 13.50 offset family; verify on hardware",
+});
+
 PS4["13.52"] = Object.assign({}, PS4["13.50"], {
   alias_of: "13.50",
 
