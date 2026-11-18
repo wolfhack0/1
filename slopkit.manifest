@@ -1,13 +1,13 @@
 CACHE MANIFEST
-# WOLF STORE offline cache v3 - complete runtime files including firmware 14.02
+# WOLF STORE offline cache v4 - PS4 firmware 13.51 compatibility
 
 CACHE:
 index.html
 style.css
 img.jpg
+goldhen_2.4b18.13.bin
 goldhen_2.4b18.14.bin
 cacheslopkit.html
-slopkit.manifest
 games/index.html
 games/content.js
 services/index.html
