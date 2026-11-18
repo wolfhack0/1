@@ -36,29 +36,28 @@ const params = new URLSearchParams(location.search);
 function hostOk() {
   var m = document.getElementById("msgs");
   if (m) {
-    m.innerHTML = "GoldHEN v2.4b18.13 Loaded ...";
+    m.textContent = "تم التشغيل بنجاح";
   }
 }
 
 function hostFail() {
   var m = document.getElementById("msgs");
   if (m) {
-    m.innerHTML = "Failed to Load! Restart Your Console ...";
-    m.style.color = "yellow";
+    m.textContent = "فشل التشغيل";
   }
 }
 
 function hostAlready() {
   var m = document.getElementById("msgs");
   if (m) {
-    m.innerHTML = "GoldHEN is Already Loaded ...";
+    m.textContent = "تم التشغيل بنجاح";
   }
 }
 
 function hostRetry() {
   var m = document.getElementById("msgs");
   if (m) {
-    m.innerHTML = "Failed to Load! Reopen the Browser ...";
+    m.textContent = "فشل التشغيل";
   }
 }
 
