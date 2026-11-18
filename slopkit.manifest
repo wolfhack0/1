@@ -1,11 +1,12 @@
 CACHE MANIFEST
-# WOLF STORE offline cache v2
+# WOLF STORE offline cache v3 - complete runtime files including firmware 14.02
 
 CACHE:
 index.html
 style.css
 img.jpg
 goldhen_2.4b18.13.bin
+goldhen_2.4b18.14.bin
 cacheslopkit.html
 slopkit.manifest
 games/index.html
@@ -14,24 +15,28 @@ services/index.html
 services/content.js
 info/index.html
 info/content.js
-splokit/afterglow.js
-splokit/chain_lapse.js
-splokit/chain_poops.js
-splokit/core.js
-splokit/int64.js
-splokit/jb.js
-splokit/jb2.js
-splokit/mem.js
-splokit/ps4_offsets.js
-splokit/rpc_worker.js
-splokit/patches/1150.bin
-splokit/patches/1200.bin
-splokit/patches/1250.bin
-splokit/patches/1300.bin
-splokit/patches/1302.bin
-splokit/patches/1350.bin
-splokit/patches/1352.bin
-splokit/patches/1400.bin
+slopkit/afterglow.js
+slopkit/chain_lapse.js
+slopkit/chain_poops.js
+slopkit/core.js
+slopkit/int64.js
+slopkit/jb.js
+slopkit/jb2.js
+slopkit/mem.js
+slopkit/patches/1150.bin
+slopkit/patches/1200.bin
+slopkit/patches/1202.bin
+slopkit/patches/1250.bin
+slopkit/patches/1252.bin
+slopkit/patches/1300.bin
+slopkit/patches/1302.bin
+slopkit/patches/1304.bin
+slopkit/patches/1350.bin
+slopkit/patches/1352.bin
+slopkit/patches/1400.bin
+slopkit/patches/1402.bin
+slopkit/ps4_offsets.js
+slopkit/rpc_worker.js
 
 NETWORK:
 *
