@@ -1,0 +1,13 @@
+/* WOLF STORE premium styling for informational pages only */
+:root{--wolf-green:#a7ff38;--wolf-dark:#080b0e;--wolf-panel:#10171c;--wolf-line:#26343a;--wolf-muted:#9aa7ad}
+body{background:radial-gradient(ellipse at 15% 5%,#193321 0%,transparent 35%),radial-gradient(ellipse at 85% 80%,#142a32 0%,transparent 35%),#070a0d;color:#eef4f4}
+.topbar{background:rgba(7,10,13,.94);border-bottom:1px solid #283a34;box-shadow:0 10px 35px #0005;backdrop-filter:blur(10px)}
+.brand{font-size:24px;letter-spacing:.5px}.brand b{color:var(--wolf-green)}.wolf-mark{border-color:#6b9d46;color:var(--wolf-green);border-radius:11px;font-weight:900;box-shadow:inset 0 0 15px #a7ff3815}
+nav a{color:#c6d0d2;border-radius:9px;padding:10px 12px;transition:background .18s,color .18s,border-color .18s;border-bottom:2px solid transparent}
+nav a:hover,nav a.active{background:#a7ff3812;color:var(--wolf-green);border-bottom-color:var(--wolf-green)}
+.hero{padding:clamp(24px,5vw,60px) 18px}.page-card{background:linear-gradient(150deg,#111a1fef,#0b1014f5);border:1px solid var(--wolf-line);border-radius:22px;box-shadow:0 24px 70px #0008;position:relative;overflow:hidden}
+.page-card:before{content:"";position:absolute;inset:0 0 auto;height:3px;background:linear-gradient(90deg,transparent,var(--wolf-green),#3ad8aa,transparent);opacity:.8}
+.eyebrow{color:var(--wolf-green);font-weight:700;letter-spacing:2.4px}.page-card h1{font-size:clamp(28px,5vw,42px);margin:14px 0}.subtitle{color:#b5c1c5;line-height:1.8}.editable-hint{color:#89989f;background:#ffffff05;border:1px solid #253238;border-radius:12px;padding:12px;line-height:1.7}
+.item-list{grid-template-columns:repeat(auto-fit,minmax(min(100%,230px),1fr));gap:14px}.item{background:linear-gradient(145deg,#162127,#0c1216);border:1px solid #283a3b;border-radius:15px;padding:18px;transition:transform .18s,border-color .18s,box-shadow .18s}.item:hover{transform:translateY(-3px);border-color:#72a84a;box-shadow:0 12px 25px #0005}.item h2{color:var(--wolf-green);font-size:18px}.item p{color:#c0cace;line-height:1.8}.empty-note{color:var(--wolf-muted);padding:18px;border:1px dashed #34434a;border-radius:12px;background:#ffffff04}
+.back{color:var(--wolf-green);font-weight:700;padding:10px 14px;border:1px solid #39513a;border-radius:10px;transition:background .2s}.back:hover{background:#a7ff3812}.footer{background:#070a0d;border-top:1px solid #23312d;color:#8ea29a}
+@media(max-width:650px){.topbar{gap:10px}.brand{font-size:22px}nav a{padding:8px 9px;font-size:13px}.page-card{padding:22px}}
