@@ -1,10 +1,21 @@
 CACHE MANIFEST 
 
-CACHE: 
+CACHE:
+index.html
+style.css
+img.jpg
+games/index.html
+games/content.js
+games.jpg
+services/index.html
+services/content.js
+services.jpg
+info/index.html
+info/content.js
+info.jpg 
 ../img.jpg
 ../style.css
 goldhen_2.4b18.14.bin
-index.html
 700\alert.js
 700\config.js
 700\lapse.js
@@ -34,4 +45,4 @@ index.html
 700\rop\850.js
 
 NETWORK: 
-* 
+*
