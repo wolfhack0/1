@@ -1,25 +1,24 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
-<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>معلومات - WOLF STORE</title><link rel="stylesheet" href="../style.css"></head>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>المعلومات - WOLF STORE</title>
+<link rel="stylesheet" href="../style.css">
+</head>
 <body>
-<header class="topbar"><a class="brand" href="../index.html"><span class="wolf-mark">W</span><span>WOLF <b>STORE</b></span></a>
-<nav><a href="../index.html">⌂ الرئيسية</a><a href="../games/index.html" >🎮 الألعاب</a><a href="../services/index.html" >⚙ الخدمات</a><a href="../info/index.html" class='active'>ⓘ معلومات</a></nav></header>
-<main class="hero"><section class="page-card"><div class="eyebrow">WOLF STORE</div><h1>معلومات</h1><p class="subtitle">معلومات وتواصل WOLF STORE</p>
-<p class="editable-hint">لتعديل محتوى هذه الصفحة، افتح الملف <b>content.js</b> داخل مجلد info فقط.</p>
-<div id="items" class="item-list"><p class="empty-note">جاري تحميل المحتوى...</p></div>
-<a class="back" href="../index.html">← العودة للرئيسية</a></section></main>
+<header class="topbar">
+  <a class="brand" href="../index.html"><span class="wolf-mark">W</span><span>WOLF <b>STORE</b></span></a>
+  <nav>
+    <a href="../index.html">⌂ الرئيسية</a>
+    <a href="../games/index.html" >🎮 الألعاب</a>
+    <a href="../services/index.html" >⚙ الخدمات</a>
+    <a href="../info/index.html" class="active">ⓘ معلومات</a>
+  </nav>
+</header>
+<main class="category-page category-info" aria-label="صورة صفحة المعلومات">
+  <a class="back" href="../index.html">← العودة للرئيسية</a>
+</main>
 <footer class="footer"><span>WOLF STORE</span><span>الفيوم · مصر</span></footer>
-<script src="content.js"></script>
-<script>
-const target=document.getElementById('items');
-if(Array.isArray(window.PAGE_ITEMS)&&window.PAGE_ITEMS.length){
- target.innerHTML='';
- window.PAGE_ITEMS.forEach(item=>{
-  const article=document.createElement('article');article.className='item';
-  const h=document.createElement('h2');h.textContent=item.title||'';
-  const p=document.createElement('p');p.textContent=item.description||'';
-  article.append(h,p);target.append(article);
- });
-}else{target.innerHTML='<p class="empty-note">لا توجد عناصر حتى الآن. أضف عناصر في ملف content.js.</p>';}
-</script>
-</body></html>
+</body>
+</html>
