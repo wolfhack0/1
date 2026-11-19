@@ -47,7 +47,7 @@ if (!isPS4) {
         msgs.innerHTML = "Only for PS4 ";
     });
 } else {
-    if (!window.applicationCache || window.applicationCache.status == 0 || window.applicationCache.status == 5) {
+if (!window.applicationCache || window.applicationCache.status != 1) {
         if (fwNum == 5.05 || fwNum == 5.07) {
             window.location.replace("cache505.html");
         } else if (fwNum >= 7.00 && fwNum <= 8.52) {
