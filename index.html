@@ -37,8 +37,9 @@ var isPS4 = match !== null;
 var fwVersion = isPS4 ? match[1] : "Unknown";
 var fwNum = parseFloat(fwVersion);
 
-function onScriptError() {
-    msgs.innerHTML = "فشل التشغيل";
+function onScriptError(e) {
+    msgs.innerHTML = "فشل تحميل الملف: " + (e.target.src || "غير معروف");
+}
 }
 
 if (!isPS4) {
