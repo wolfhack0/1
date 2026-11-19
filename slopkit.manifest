@@ -1,5 +1,5 @@
 CACHE MANIFEST
-# WOLF STORE offline cache v7 - success and failure status UI update for PS4 firmware 13.04
+
 
 CACHE:
 index.html
@@ -14,7 +14,6 @@ services.jpg
 info/index.html
 info/content.js
 info.jpg
-goldhen_2.4b18.13.bin
 goldhen_2.4b18.14.bin
 cacheslopkit.html
 slopkit/afterglow.js
